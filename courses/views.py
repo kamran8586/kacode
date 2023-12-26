@@ -3,11 +3,13 @@ from .models import Course , Comment
 from rest_framework import viewsets
 from .serializers import CourseSerializer , CommentSerializer
 from django.core.exceptions import PermissionDenied
+from rest_framework.permissions import IsAuthenticated
 
 # Create your views here.
 class CourseView(viewsets.ModelViewSet):
     queryset = Course.objects.all()
     serializer_class = CourseSerializer
+    permission_classes = (IsAuthenticated,)
     
 class CommentView(viewsets.ModelViewSet):
     queryset = Comment.objects.all()

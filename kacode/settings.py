@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+  'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -38,10 +39,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'rest_framework_simplejwt',
     'code_part',
     'register_login',
     'courses',
-    'ckeditor'
+    'ckeditor',
+    
 ]
 
 MIDDLEWARE = [
@@ -71,6 +74,14 @@ TEMPLATES = [
         },
     },
 ]
+REST_FRAMEWORK = {
+    
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    )
+   
+}
 
 WSGI_APPLICATION = 'kacode.wsgi.application'
 
