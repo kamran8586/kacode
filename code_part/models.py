@@ -18,6 +18,8 @@ class Submission(models.Model):
     user = models.ForeignKey(User, on_delete = models.CASCADE)
     problem = models.ForeignKey(Problem , on_delete = models.CASCADE)
     code = models.TextField()
+    output = models.TextField(null = True , blank = True)
+    input_data = models.TextField(null = True , blank = True)
     
     def __str__(self) -> str:
         return self.user.first_name + " " + self.user.last_name + " " + self.problem.title
