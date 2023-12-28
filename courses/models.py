@@ -1,6 +1,6 @@
 from django.db import models
 from ckeditor.fields import RichTextField
-from django.contrib.auth.models import User
+from register_login.models import UserProfile as User
 # Create your models here.
 class Course(models.Model):
     title = models.CharField(max_length=255)

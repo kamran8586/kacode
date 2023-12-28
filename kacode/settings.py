@@ -26,12 +26,13 @@ SECRET_KEY = 'django-insecure-b=mb(_c0m)(82mf2=i4ph_zt_=9cqlj$36ohqn3=ik8*k_c1c@
 DEBUG = True
 
 ALLOWED_HOSTS = []
+AUTH_USER_MODEL = 'register_login.UserProfile'
 
 
 # Application definition
 
 INSTALLED_APPS = [
-  'jazzmin',
+    'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

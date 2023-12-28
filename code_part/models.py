@@ -1,5 +1,5 @@
 from django.db import models
-from django.contrib.auth.models import User
+from register_login.models import UserProfile as User
 # Create your models here.
 class Problem(models.Model):
     DIFFICULTIES = [
@@ -20,5 +20,5 @@ class Submission(models.Model):
     code = models.TextField()
     
     def __str__(self) -> str:
-        return self.user.username
+        return self.user.first_name + " " + self.user.last_name + " " + self.problem.title
     

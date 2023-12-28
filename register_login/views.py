@@ -21,9 +21,9 @@ class CreateUserView(APIView):
 
 class LoginUserView(APIView):
     def post(self,request , *args, **kwargs):
-        username = request.data.get("username", "")
+        email = request.data.get("email", "")
         password = request.data.get("password", "")
-        user = authenticate(username=username, password=password)
+        user = authenticate(email=email, password=password)
         if user is not None:
             token = AccessToken.for_user(user)
             refresh = RefreshToken.for_user(user)
